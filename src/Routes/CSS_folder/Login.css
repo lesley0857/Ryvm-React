@@ -1,0 +1,59 @@
+.form {
+    margin: 1em;
+    padding-top: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    /* background-image: url('https://media.gettyimages.com/id/894487474/photo/st-michael-archangel.jpg?s=2048x2048&w=gi&k=20&c=eCiy49ZMx5Td-xnEUX851B6swP_7aowRiwCoFN4ruz0=');
+    background-size: cover; */
+    /* background: rgb(244, 63, 63); */
+}
+
+.form_element {
+    height: 30vh;
+    display: block;
+    margin-top: 8em;
+    color: black;
+    background: none;
+}
+
+.fields_block {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+
+
+.fields {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 2vw;
+    margin-top: 1rem;
+    border-radius: 3px;
+    font-size: larger;
+}
+
+.Submit_button {
+    display: inline;
+    background: blue;
+    min-height: 30px;
+    min-width: 50px;
+    position: relative;
+    left: 70%;
+    top: 10px;
+}
+
+@media screen and (min-width:576px) {
+    .Submit_button {
+        position: relative;
+        left: 90%;
+        top: 10px;
+    }
+
+    .fields_block {
+        font-size: larger;
+        font-weight: bold;
+    }
+}

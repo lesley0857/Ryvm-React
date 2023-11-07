@@ -1,0 +1,54 @@
+.form {
+    margin: 2em;
+    display: flex;
+    width: 80%;
+    position: relative;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background: rgb(244, 63, 63);
+}
+
+
+
+
+
+.fields_block {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-inline: 0.5em;
+}
+
+.fields {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 3rem;
+    border-radius: 3px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.input_fields {
+    height: 25px;
+}
+
+.Submit_button {
+    display: flex;
+    background: blue;
+    height: 30px;
+    min-width: 50px;
+}
+
+
+
+@media screen and (min-width:576px) {
+    .fields_block {
+        margin-inline: 1em;
+    }
+}
