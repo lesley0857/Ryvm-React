@@ -37,6 +37,7 @@ function BasicPage(props) {
         if (window.screen.width < '576') {
             console.log(window.screen.width)
             menu_ref.current.style.display = 'none';
+            menu_ref.current.style.backGround = 'black'
         }
         else { console.log(window.screen.width) }
     }
@@ -71,8 +72,19 @@ function BasicPage(props) {
             <div className="other_components">
                 {props.children}
             </div>
-            <Clergy_page />
-            <Advert_page />
+            <div className="clergy_cont">
+                <div className="holder">
+                    <div className="word_holder">SAINT OF THE DAY</div>
+                    <Clergy_page />
+                </div>
+                <div className="holder">
+                    <div className="word_holder">CLERGY</div>
+                    <Clergy_page />
+                </div>
+            </div>
+            <div className="advert_cont">
+                <Advert_page />
+            </div>
             <footer>
                 <FooterComponent></FooterComponent>
             </footer>

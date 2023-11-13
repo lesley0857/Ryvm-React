@@ -40,7 +40,7 @@
 
 .Submit_button {
     display: flex;
-    background: blue;
+    background: rgb(19, 172, 243);
     height: 30px;
     min-width: 50px;
 }

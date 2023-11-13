@@ -18,7 +18,7 @@ function Posts_page() {
     const [posts_state, Set_posts_state] = useState(null)
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/clergy/')
+        axios.get('https://ryvm-django.vercel.app/api/clergy/')
             .then((res) => {
                 console.log(res);
                 Set_posts_state(res.data)

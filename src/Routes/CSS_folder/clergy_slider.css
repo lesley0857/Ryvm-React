@@ -5,15 +5,11 @@
     margin-top: 1em;
 }
 
-.cont {
-    background: #fff;
 
-}
 
 .img {
     display: block;
     min-height: 80%;
-    min-height: 100%;
     object-fit: cover;
     border: 2px solid red;
 }
@@ -23,8 +19,10 @@
 }
 
 .swiper {
-    width: 240px;
-    height: 320px;
+    /* width: 240px; */
+    /* height: 320px; */
+    height: 40vh;
+    width: 40vw;
     z-index: '-1';
 }
 

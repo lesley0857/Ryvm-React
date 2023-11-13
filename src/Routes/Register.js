@@ -54,7 +54,7 @@ function RegisterPage() {
                 break;
             case "wrong phone pattern": alert("wrong phone pattern");
                 break;
-            default: axios.post('http://127.0.0.1:8000/api/user/register_user/',
+            default: axios.post('http://13.49.225.0:8000/api/user/register_user/',
                 {
                     email: user.email,
                     firstname: user.firstname,

@@ -26,7 +26,7 @@ function App() {
   })
 
   useEffect(() => {
-    axios.post('http://127.0.0.1:8000/api/token/refresh/',
+    axios.post('https://ryvm-django.vercel.app/api/token/refresh/',
       { refresh: localStorage.getItem('refresh_token') },
       {
         headers: {

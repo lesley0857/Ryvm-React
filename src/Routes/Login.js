@@ -34,8 +34,14 @@ function Loginpage() {
                 break;
             case "spec missing": alert("please add a special character to your password");
                 break;
-            default: axios.post('http://127.0.0.1:8000/api/token/',
-                { email: login_state.email, password: login_state.password, }
+            default: axios.post('https://ryvm-django.vercel.app/api/token/',
+                { email: login_state.email, password: login_state.password, },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        accept: 'application/json',
+                    }
+                }
             ).then((res) => {
                 Setloading(res);
                 details.sett({ IsloggedIn: true, access: res.data.access, refresh: res.data.refresh, email: login_state.email });

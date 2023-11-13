@@ -1,0 +1,36 @@
+.Profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.image {
+    display: block;
+    border-radius: 50px;
+    margin-left: 2em;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.first_line {
+    display: flex;
+    height: 20vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile_holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid black;
+    justify-self: center;
+    margin-inline: 1em;
+}
+
+.second_line {
+    background: yellowgreen;
+    display: flex;
+}

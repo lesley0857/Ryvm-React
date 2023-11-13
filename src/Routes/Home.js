@@ -24,6 +24,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import SocietyPage from "./Society";
 import ProductsPage from "./Products";
+import "../Routes/CSS_folder/Profile.css";
 
 export const specific_socities = createContext()
 
@@ -36,10 +37,12 @@ function HomePage() {
     const [socc, Setsocc] = useState([])
 
     console.log(details.sta.IsloggedIn)
+    console.log(details.sta.email)
+
     useEffect(() => {
         if (details.sta.IsloggedIn === true) {
             axios.get(
-                `http://127.0.0.1:8000/api/user/user_detail/${details.sta.email}/`,
+                `https://ryvm-django.vercel.app/api/user/user_detail/${details.sta.email}/`,
                 {
                     headers: {
                         Authorization: localStorage.getItem('access_token') ?
@@ -51,7 +54,7 @@ function HomePage() {
                 }
 
             ).then((res) => {
-                console.log(res)
+                console.log(`here ${res}`)
                 Setuserstate({
                     name: `${res.data.User_datails.lastname} ${res.data.User_datails.firstname}`.toUpperCase(),
                     id: res.data.User_datails.id,
@@ -71,25 +74,32 @@ function HomePage() {
 
 
     return (
-        <div>
-            <div>Welcome {userstate.name}</div>
-            {userstate.id}
-            {userstate.email}
-            <img height='200' width='200' src={`http://127.0.0.1:8000${userstate.image}`} />
-            <div>List of Socities you belong to:</div>
-            {societies.map((soc) =>
+        <div className="Profile">
+            <div className="first_line">
+                <img className="image" src={userstate.image} />
 
-                <div key={soc.id} onClick={() => {
-                    localStorage.setItem(`${soc.Society_name}`, soc.Society_name);
-                    navigate(`/Society/${soc.Society_name}`)
-                }}>
-
-                    {soc.Society_name}
-                    <img height='200' width='200' src={`http://127.0.0.1:8000${soc.profile_pic}`} />
-
-
+                <div className="profile_holder">
+                    <div>Welcome {userstate.name}</div>
+                    <span>Remeber God Loves You</span>
                 </div>
-            )}
+            </div>
+
+            <div className="second_line">
+                <div>List of Socities you belong to:</div>
+                {societies.map((soc) =>
+
+                    <div key={soc.id} onClick={() => {
+                        localStorage.setItem(`${soc.Society_name}`, soc.Society_name);
+                        navigate(`/Society/${soc.Society_name}`)
+                    }}>
+
+                        {soc.Society_name}
+                        <img height='200' width='200' src={`https://ryvm-django.vercel.app${soc.profile_pic}`} />
+
+
+                    </div>
+                )}
+            </div>
 
         </div>
     )

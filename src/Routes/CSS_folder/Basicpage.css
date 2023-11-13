@@ -1,7 +1,6 @@
 .BasicPage {
     display: flex;
     flex-direction: column;
-    background: blue;
     min-height: 100vh;
     margin-top: 0em;
     padding: 0;
@@ -11,7 +10,7 @@
 .toggle_menu,
 .toggle_menu::before,
 .toggle_menu::after {
-    background: rgb(199, 15, 15);
+    background: rgba(58, 1, 1, 0.961);
     position: absolute;
     width: 30px;
     height: 0.0px;
@@ -25,7 +24,7 @@
 }
 
 .toggle_menu::before {
-    background: rgb(216, 24, 216);
+    background: rgba(78, 2, 2, 0.961);
     transform: translate(-27px, -35px);
 }
 
@@ -111,7 +110,7 @@ nav ol li a:focus {
     position: fixed;
     top: 50%;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .find_church_one {
@@ -120,50 +119,48 @@ nav ol li a:focus {
     position: fixed;
     top: 40%;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .other_components {
-    background: #ffff00;
-    background-image: url('https://media.gettyimages.com/id/894487474/photo/st-michael-archangel.jpg?s=2048x2048&w=gi&k=20&c=eCiy49ZMx5Td-xnEUX851B6swP_7aowRiwCoFN4ruz0=');
-    /* background-size: cover; */
+    /* background-image: url('https://media.gettyimages.com/id/894487474/photo/st-michael-archangel.jpg?s=2048x2048&w=gi&k=20&c=eCiy49ZMx5Td-xnEUX851B6swP_7aowRiwCoFN4ruz0=');
+    background-size: cover; */
     margin: 4em 0.2em 0 0.2em;
     display: flex;
     justify-content: center;
     align-content: center;
-    min-height: 85vh;
-    border: black solid 10px;
+    min-height: 80vh;
+    border: black solid 1px;
     object-fit: cover;
 }
 
-.Carousel {
-    display: flex;
-    width: 100vw;
-    height: 30vh;
-    background: white;
-    scroll-behavior: smooth;
-    position: relative;
-}
-
-.cards {
+.clergy_cont {
     margin: 1em;
+    padding: 0;
     display: flex;
-    min-width: 10vw;
-    border: 2px solid blueviolet;
-    flex-direction: row;
-    background: black;
-    color: aliceblue;
+    align-content: center;
+    justify-content: space-between;
+    height: 40vh;
 }
 
-.cards:hover {
-    background: #ffff00;
-    transform: scale(110%, 110%);
-    transition-property: transform;
-    transition-duration: 2s;
-    transition-delay: 0.1s;
+.holder {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
+.word_holder {
+    display: flex;
+    justify-content: center;
+}
 
+.advert_cont {
+    margin-top: 1em;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    height: 40vh
+}
 
 .animate {
     animation-name: bounce;
@@ -209,15 +206,17 @@ nav ol li a:focus {
 footer {
     /* background: red; */
     display: flex;
+    margin-top: 8em;
+    border: 5px solid black;
 }
 
 
 @media screen and (min-width:576px) {
     .nav {
-        background: #ffff00;
+        background: gray;
         justify-content: center;
         align-content: center;
-        z-index: 3;
+        z-index: 2;
     }
 
     .toggle_menu {
@@ -234,6 +233,7 @@ footer {
         width: 80vw;
         min-height: 8vh;
         margin-top: 0.2em;
+        background: transparent;
         z-index: '-1';
     }
 
@@ -248,5 +248,14 @@ footer {
 
         margin: 1.5em 0.2em 0 0.2em;
 
+    }
+
+    .clergy_cont {
+        justify-content: space-evenly;
+    }
+
+    .advert_cont {
+        margin-top: 5em;
+        margin-bottom: 5em;
     }
 }

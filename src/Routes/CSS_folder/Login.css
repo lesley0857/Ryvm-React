@@ -14,7 +14,6 @@
     height: 30vh;
     display: block;
     margin-top: 8em;
-    color: black;
     background: none;
 }
 
@@ -37,7 +36,7 @@
 
 .Submit_button {
     display: inline;
-    background: blue;
+    background: rgb(19, 172, 243);
     min-height: 30px;
     min-width: 50px;
     position: relative;
