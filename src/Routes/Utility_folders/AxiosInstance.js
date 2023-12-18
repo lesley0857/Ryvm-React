@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = 'http://16.16.67.238'
+const baseUrl = 'http://51.20.251.132'
 
 
 export default baseUrl
