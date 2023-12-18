@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Form, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Validator } from "./form_validator";
+import { Validator } from "./Utility_folders/form_validator";
 import './CSS_folder/Register.css';
+import RegisterChecker from "./Utility_folders/Register_checker";
+
 
 function RegisterPage() {
     const navigate = useNavigate()
@@ -19,9 +21,11 @@ function RegisterPage() {
         password: '',
 
     })
+    const [message, Setmessage] = useState({ message: '' })
     const emailinput_ref = useRef()
     const firstname_ref = useRef()
     const lastname_ref = useRef()
+    const birth_date_ref = useRef()
     const phone_number_ref = useRef()
     const alternative_number_ref = useRef()
     const marital_status_ref = useRef()
@@ -35,6 +39,7 @@ function RegisterPage() {
             email: emailinput_ref.current.value,
             firstname: firstname_ref.current.value,
             lastname: lastname_ref.current.value,
+            birth_date: birth_date_ref.current.value,
             phonenumber: phone_number_ref.current.value,
             alternativenumber: alternative_number_ref.current.value,
             maritalstatus: marital_status_ref.current.value,
@@ -54,11 +59,12 @@ function RegisterPage() {
                 break;
             case "wrong phone pattern": alert("wrong phone pattern");
                 break;
-            default: axios.post('http://13.49.225.0:8000/api/user/register_user/',
+            default: axios.post('http://127.0.0.1:8000/api/user/register_user/',
                 {
                     email: user.email,
                     firstname: user.firstname,
                     lastname: user.lastname,
+                    birth_date: user.birth_date,
                     phone_number: user.phonenumber,
                     alternative_number: user.alternativenumber,
                     marital_status: user.maritalstatus,
@@ -69,14 +75,28 @@ function RegisterPage() {
                 }, { headers: { 'Content-Type': "multipart/form-data" } }
             )
                 .then((res) => {
-                    console.log(res.data);
-                    navigate('/Login', { replace: true })
+                    console.log(res.data.message);
+                    Setmessage({ message: res.data.message })
                 })
-                .catch((error) => { console.log(error) });
+                .catch((error) => {
+                    console.log(error);
+                    Setmessage({ message: error.message })
+                });
         }
-
-
     }
+    useEffect(() => {
+        console.log('run')
+        if (message.message === 'User already exists !!!!') {
+            alert('User with Email Exists')
+        }
+        if (message.message === 'Successful') {
+            alert(' Account Created. Please visit your mail to verify your account hence your account will be deleted after 24 hours')
+            navigate('/Login', { replace: true })
+        }
+        if (message.message === 'Network Error') {
+            alert('Network Error')
+        }
+    }, [message])
 
     return (
         <div className="form">
@@ -97,12 +117,17 @@ function RegisterPage() {
                 </div>
 
                 <div className="fields_block">
+                    <label className="fields">Date Of Birth</label>
+                    <input className="fields input_fields" type="date" ref={birth_date_ref} onChange={onchangehandler} />
+                </div>
+
+                <div className="fields_block">
                     <label className="fields">Phone Number</label>
                     <input className="fields input_fields" type="number" ref={phone_number_ref} onChange={onchangehandler} />
                 </div>
 
                 <div className="fields_block">
-                    <label className="fields nowrap">Alternative Number</label>
+                    <label className="fields">Alternative Number:</label>
                     <input className="fields input_fields" type="number" ref={alternative_number_ref} onChange={onchangehandler} />
                 </div>
 
@@ -144,4 +169,4 @@ function RegisterPage() {
     )
 }
 
-export default RegisterPage
+export default RegisterChecker(RegisterPage)

@@ -1,0 +1,53 @@
+.home_overlay {
+    display: flex;
+    padding-inline: 1em;
+    border-radius: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(172, 255, 47, 0.356);
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 30vw;
+    left: 5vw;
+    top: 65vh;
+    z-index: 1;
+    padding-bottom: 0.5em;
+}
+
+.overlay_holder {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    background: greenyellow;
+    border-bottom: 1px solid grey;
+}
+
+
+@media screen and (min-width:576px) {
+    .home_overlay {
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+        border-radius: 5%;
+        background: rgba(172, 255, 47, 0.356);
+        width: 25vw;
+        height: 35vh;
+        position: absolute;
+        right: 100vw;
+        left: 5vw;
+        top: 65vh;
+        z-index: 1;
+    }
+
+    .overlay_header {}
+
+    .overlay_holder {
+        display: flex;
+        gap: 1em;
+        border-bottom: 1px solid grey;
+        background: greenyellow;
+    }
+}

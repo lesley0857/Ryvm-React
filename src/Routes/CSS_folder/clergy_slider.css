@@ -1,10 +1,13 @@
 .clergy_name {
     display: flex;
     justify-content: center;
-    min-height: 20px;
-    margin-top: 1em;
+    min-height: 15px;
+    width: 100%;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
 
 
 .img {
@@ -63,7 +66,7 @@
 }
 
 .swiper-slide:nth-child(1n) {
-    background-color: rgb(206, 17, 17);
+    background-color: gray;
 }
 
 .swiper-slide:nth-child(2n) {

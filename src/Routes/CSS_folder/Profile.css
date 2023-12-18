@@ -2,22 +2,31 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: space-evenly;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
 
 .image {
     display: block;
-    border-radius: 50px;
-    margin-left: 2em;
-    height: 150px;
-    width: 150px;
+    border-radius: 50%;
+    border-top: 3px solid rgba(0, 0, 0, 0.326);
+    border-bottom: 1px solid rgba(14, 12, 12, 0.201);
+    outline: 0.5px solid rgba(0, 255, 255, 0.454);
+    margin-left: 0.5em;
+    height: 13vh;
+    width: 24vw;
+    box-shadow: black;
     object-fit: cover;
+    position: inherit;
 }
 
 .first_line {
     display: flex;
-    height: 20vh;
-    justify-content: space-between;
+    height: 15vh;
+    gap: 2em;
     align-items: center;
 }
 
@@ -25,12 +34,60 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid black;
     justify-self: center;
     margin-inline: 1em;
 }
 
 .second_line {
-    background: yellowgreen;
+    margin-top: 0.5em;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.list_of_scoieties {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.societies_tile {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.091);
+    border-radius: 10%;
+}
+
+/* ##################################################### */
+
+@media screen and (min-width:576px) {
+
+    .first_line {
+        display: flex;
+        height: 15vh;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profile_holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: center;
+        margin-inline: 1em;
+    }
+
+    .image {
+        margin: 1em;
+        display: block;
+        border-radius: 50%;
+        height: 15vh;
+        width: 7vw;
+    }
+
 }

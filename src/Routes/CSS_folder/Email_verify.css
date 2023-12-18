@@ -1,0 +1,9 @@
+/* .nav {
+    display: none
+} */
+
+.page {
+    display: flex;
+    background: blue;
+    height: 100vh;
+}

@@ -1,10 +1,44 @@
 .BasicPage {
     display: flex;
     flex-direction: column;
+    /* background-image: url('http://127.0.0.1:8000/media/images/Archangel (2).jpeg'); */
+    background-size: 95vw 85vh;
+    background-repeat: no-repeat;
     min-height: 100vh;
     margin-top: 0em;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+.top {
+    display: none;
+}
+
+
+.aligncolumn {
+    display: flex;
+    margin-bottom: 2em;
+    position: absolute;
+    left: 16vw;
+    height: 10vh;
+    width: auto;
+    align-items: center;
+}
+
+.church_logo_desktop {
+    display: none;
+}
+
+.mobile_church_title {
+    margin-left: 0.5em;
+    font-weight: bold;
+    font-family: cursive Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+
+.church_logo_mobile {
+    margin-left: 0.5em;
+
 }
 
 .toggle_menu,
@@ -39,9 +73,8 @@
 
 .clicked {
     animation-name: spin;
-    animation-delay: 0.1s;
-    /* animation-fill-mode: forwards; */
-    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-duration: 0.3s;
 
 }
 
@@ -59,15 +92,14 @@
     }
 }
 
-
 .nav {
-    background: gray;
+    background: grey;
     position: sticky;
     top: 0;
     margin: 0 0.2em;
-    max-height: 10vh;
+    height: 10vh;
     display: flex;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* .toggle_menu:hover {
@@ -86,14 +118,17 @@
     justify-content: space-around;
     background: hsla(0, 0%, 0%, 0.767);
     list-style-type: none;
+    text-decoration: none;
     position: relative;
     top: 25px;
-    left: -7px;
+    left: 5vw;
 }
 
 
 nav ol li a {
     color: aqua;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 nav ol li a:hover,
@@ -123,24 +158,20 @@ nav ol li a:focus {
 }
 
 .other_components {
-    /* background-image: url('https://media.gettyimages.com/id/894487474/photo/st-michael-archangel.jpg?s=2048x2048&w=gi&k=20&c=eCiy49ZMx5Td-xnEUX851B6swP_7aowRiwCoFN4ruz0=');
-    background-size: cover; */
-    margin: 4em 0.2em 0 0.2em;
+    margin: 0 0.2em 0 0.2em;
     display: flex;
     justify-content: center;
     align-content: center;
     min-height: 80vh;
-    border: black solid 1px;
     object-fit: cover;
 }
 
 .clergy_cont {
-    margin: 1em;
+    margin-top: 1em;
     padding: 0;
     display: flex;
     align-content: center;
-    justify-content: space-between;
-    height: 40vh;
+    justify-content: space-around;
 }
 
 .holder {
@@ -152,6 +183,7 @@ nav ol li a:focus {
 .word_holder {
     display: flex;
     justify-content: center;
+    margin-bottom: 0.5em;
 }
 
 .advert_cont {
@@ -160,35 +192,6 @@ nav ol li a:focus {
     align-content: center;
     justify-content: space-evenly;
     height: 40vh
-}
-
-.animate {
-    animation-name: bounce;
-    animation-duration: 3s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    33% {
-        transform: translate(300px, 50px);
-    }
-
-    50% {
-        transform: translate(0, 0);
-    }
-
-    83% {
-        transform: translate(-300px, -50px);
-    }
-
-    100% {
-        transform: translate(0px, 0px);
-    }
 }
 
 
@@ -203,24 +206,52 @@ nav ol li a:focus {
 
 
 /* ################################################### */
-footer {
-    /* background: red; */
-    display: flex;
-    margin-top: 8em;
-    border: 5px solid black;
-}
+
 
 
 @media screen and (min-width:576px) {
+    .BasicPage {
+        scroll-behavior: smooth;
+    }
+
+    .top {
+        display: flex;
+        gap: 20vw;
+        align-items: center;
+    }
+
+    .logo_title {
+        font-weight: bold;
+        font-family: cursive Georgia, 'Times New Roman', Times, serif;
+        font-size: 2.3em;
+    }
+
     .nav {
-        background: gray;
+        background: rgb(16, 12, 12);
         justify-content: center;
         align-content: center;
-        z-index: 2;
+        height: 10vh;
+        z-index: 3;
+
     }
 
     .toggle_menu {
         display: none;
+    }
+
+    .church_logo_mobile {
+        display: none;
+    }
+
+    .aligncolumn {
+        display: none;
+    }
+
+    .church_logo_desktop {
+        display: flex;
+        background: white;
+        min-height: 10vh;
+        position: relative;
     }
 
     .nav ol {
@@ -235,6 +266,7 @@ footer {
         margin-top: 0.2em;
         background: transparent;
         z-index: '-1';
+        text-decoration: none;
     }
 
     .nav ol li {
@@ -242,15 +274,17 @@ footer {
         margin-top: 0.1em;
         align-items: center;
         font-size: larger;
+        list-style-type: none;
+        text-decoration: none;
     }
 
     .other_components {
-
         margin: 1.5em 0.2em 0 0.2em;
-
     }
 
     .clergy_cont {
+        display: flex;
+        align-items: center;
         justify-content: space-evenly;
     }
 

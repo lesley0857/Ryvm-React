@@ -7,12 +7,13 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import "../Routes/CSS_folder/advert_slider.css";
 import axios from "axios";
+import baseUrl from "./Utility_folders/AxiosInstance";
 
 
 function Advert_page() {
     const [advert_state, Set_advert_state] = useState(null)
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/clergy/')
+        axios.get(`${baseUrl}/api/adverts/`)
             .then((res) => {
                 console.log(res);
                 Set_advert_state(res.data)
@@ -39,12 +40,12 @@ function Advert_page() {
                 modules={[EffectCoverflow, Pagination]}
                 className="mySwiper swiperr"
             >
-                <SwiperSlide className="swiper-slider">
-                    <img className=".swiper-slider img " src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slider">
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </SwiperSlide>
+                {advert_state ? advert_state.map(advert =>
+                    <SwiperSlide key={advert.id} className="swiper-slider">
+                        <img className=".swiper-slider img " src={`${baseUrl}/${advert.adverticement_image}`} />
+                    </SwiperSlide>
+                ) : <div>......Loading</div>}
+
 
             </Swiper>
         </>

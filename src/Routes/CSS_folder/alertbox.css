@@ -1,0 +1,14 @@
+.alertbox {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 4;
+    top: 10vh;
+    left: 10vw;
+    width: 50vw;
+    height: 10vh
+}
+
+.clicked {
+    display: none;
+}

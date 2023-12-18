@@ -15,8 +15,8 @@ function Logout() {
         refresh: '',
     });
 
-    localStorage.setItem("access_token", details.sta.access)
-    localStorage.setItem("refresh_token", details.sta.refresh)
+    localStorage.setItem("access_token", btoa(details.sta.access))
+    localStorage.setItem("refresh_token", btoa(details.sta.refresh))
     localStorage.setItem("email", details.sta.email)
 
     navigate('/Login', { replace: true })
