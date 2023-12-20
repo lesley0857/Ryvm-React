@@ -4,6 +4,7 @@ import axios from "axios";
 import { Validator } from "./Utility_folders/form_validator";
 import './CSS_folder/Register.css';
 import RegisterChecker from "./Utility_folders/Register_checker";
+import baseUrl from "./Utility_folders/AxiosInstance";
 
 
 function RegisterPage() {
@@ -59,7 +60,7 @@ function RegisterPage() {
                 break;
             case "wrong phone pattern": alert("wrong phone pattern");
                 break;
-            default: axios.post('http://127.0.0.1:8000/api/user/register_user/',
+            default: axios.post(`${baseUrl}/api/user/register_user/`,
                 {
                     email: user.email,
                     firstname: user.firstname,
