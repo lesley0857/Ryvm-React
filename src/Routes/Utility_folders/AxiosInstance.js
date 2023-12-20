@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = 'http://51.20.251.132'
+const baseUrl = 'https://thearchangelsparish.online'
 
 
 export default baseUrl
